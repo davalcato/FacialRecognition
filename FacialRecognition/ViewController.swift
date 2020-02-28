@@ -61,4 +61,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         present(picker, animated: true)
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        dismiss(animated: true)
+        let img = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        imageView.image = img
+        findFacesButton.isHidden = false
+        
+    }
+    
 }
