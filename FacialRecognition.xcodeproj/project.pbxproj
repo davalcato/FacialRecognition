@@ -82,6 +82,7 @@
 				752103C22404CEAA00409E6B /* FacialRecognition */,
 				752103D92404CEAC00409E6B /* FacialRecognitionTests */,
 				752103E42404CEAC00409E6B /* FacialRecognitionUITests */,
+				752103F32404D47800409E6B /* images */,
 				752103C12404CEAA00409E6B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -126,6 +127,13 @@
 				752103E72404CEAC00409E6B /* Info.plist */,
 			);
 			path = FacialRecognitionUITests;
+			sourceTree = "<group>";
+		};
+		752103F32404D47800409E6B /* images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
