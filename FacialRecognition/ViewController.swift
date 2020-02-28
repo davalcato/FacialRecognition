@@ -27,6 +27,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        findFacesButton.isHidden = true
+        fadeView.isHidden = true
+        picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        picker.delegate = self
+        savePhotos()
     }
 
 
