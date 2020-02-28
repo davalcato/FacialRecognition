@@ -31,6 +31,9 @@
                                 <rect key="frame" x="146" y="755" width="123" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Find Faces Button"/>
+                                <connections>
+                                    <action selector="findFaces:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TXJ-jZ-aB5"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="imT-8j-2y9" userLabel="fade view">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>

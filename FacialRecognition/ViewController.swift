@@ -69,4 +69,21 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
     }
     
+    @IBAction func findFaces(_ sender: Any) {
+        findFacesButton.isHidden = true
+        activityIndicator.startAnimating()
+        fadeView.isHidden = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+            self.lookForFaces()
+            
+        }
+        
+    }
+     
+    func lookForFaces() {
+        
+        
+    }
+    
+    
 }
