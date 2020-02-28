@@ -34,6 +34,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         picker.delegate = self
         savePhotos()
     }
+    
+    func savePhotos() {
+        for num in 1...4 {
+            let fileName = "img\(num).jpeg"
+            if UserDefaults.standard.bool(forKey: fileName)
+                print("\(fileName) previously saved")
+                continue
+        }
+        if let img = UIImage(named: fileName) {
+            UIImageWriteToSavedPhotosAlbum(img, nil, nil, nil)
+            UserDefaults.standard.set(true, forKey: fileName)
+            
+        }
+        else {
+            print("error getting file")
+            
+        }
+        
+    }
 
 
 }
