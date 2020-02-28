@@ -38,7 +38,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func savePhotos() {
         for num in 1...4 {
             let fileName = "img\(num).jpeg"
-            if UserDefaults.standard.bool(forKey: fileName)
+            if UserDefaults.standard.bool(forKey: fileName) {
                 print("\(fileName) previously saved")
                 continue
         }
@@ -53,7 +53,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         
     }
-
-
+    
 }
-
+    @IBAction func selectPhoto(_ sender: Any) {
+        picker.modalPresentationStyle = .overFullScreen
+        self.modalPresentationStyle = .pageSheet
+        present(picker, animated: true)
+    }
+    
+}
