@@ -81,9 +81,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
      
     func lookForFaces() {
-        
+        var orientation:CGImagePropertyOrientation
+        switch imageView.image!.imageOrientation {
+        case .down:
+            orientation = .down
+        case .up:
+            orientation = .up
+        case .left:
+                orientation = .left
+        default:
+            orientation = .right
+        }
         
     }
-    
     
 }
