@@ -109,6 +109,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             return
         }
         
+        for result in results {
+            showLandMarks(result)
+            
+        }
+        activityIndicator.stopAnimating()
+        fadeView.isHidden = true
+        
+    }
+    
+    func showLandMarks(_ face:VNFaceObservation) {
+        
+        
     }
     
 }
