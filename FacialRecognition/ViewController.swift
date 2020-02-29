@@ -93,6 +93,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             orientation = .right
         }
         
+        let request = VNDetectFaceLandmarksRequest(completionHandler: self.handleLandmarkRequest)
+        
+    }
+    
+    func handleLandmarkRequest(request:VNRequest, error: Error?) {
+        
+        
     }
     
 }
