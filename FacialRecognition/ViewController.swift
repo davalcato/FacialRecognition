@@ -104,7 +104,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func handleLandmarkRequest(request:VNRequest, error: Error?) {
-        
+        guard let results = request.results as? [VNFaceObservation] else {
+            print("no faces detected")
+            return
+        }
         
     }
     
