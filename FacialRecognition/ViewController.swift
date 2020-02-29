@@ -94,6 +94,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         
         let request = VNDetectFaceLandmarksRequest(completionHandler: self.handleLandmarkRequest)
+        let handler = VNImageRequestHandler(cgImage: imageView.image!.cgImage!, orientation: orientation, options: [:])
+        do {
+            try handler.perform([request])
+        } catch {
+            print(error)
+        }
         
     }
     
