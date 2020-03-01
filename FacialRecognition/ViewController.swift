@@ -121,6 +121,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func showLandMarks(_ face:VNFaceObservation) {
         let image = imageView.image!
         UIGraphicsBeginImageContextWithOptions(image.size, true, 0)
+        let context = UIGraphicsGetCurrentContext()
+        context?.setStrokeColor(UIColor.red.cgColor)
+        context?.setLineWidth(3.0)
+        image.draw(in: CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height))
         
     }
     
