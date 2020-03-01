@@ -22,8 +22,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     var picker:UIImagePickerController!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -49,11 +47,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         else {
             print("error getting file")
-            
         }
-        
     }
-    
 }
     @IBAction func selectPhoto(_ sender: Any) {
         picker.modalPresentationStyle = .overFullScreen
@@ -142,6 +137,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         context?.setStrokeColor(UIColor.green.cgColor)
         
         drawLandmark(landmark: face.landmarks?.faceContour, context: context, rect: faceRect)
+        drawLandmark(landmark: face.landmarks?.outerLips, context: context, rect: faceRect)
+        drawLandmark(landmark: face.landmarks?.innerLips, context: context, rect: faceRect)
+        drawLandmark(landmark: face.landmarks?.leftEye, context: context, rect: faceRect)
+        drawLandmark(landmark: face.landmarks?.rightEye, context: context, rect: faceRect)
+        drawLandmark(landmark: face.landmarks?.leftPupil, context: context, rect: faceRect)
+        drawLandmark(landmark: face.landmarks?.rightPupil, context: context, rect: faceRect)
+        drawLandmark(landmark: face.landmarks?.nose, context: context, rect: faceRect)
+        drawLandmark(landmark: face.landmarks?.noseCrest, context: context, rect: faceRect)
+        drawLandmark(landmark: face.landmarks?.medianLine, context: context, rect: faceRect)
         
         let finalImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -165,7 +169,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 }
                 else {
                     context?.addLine(to: adjustedPoint)
-                    
                     
                 }
             }
