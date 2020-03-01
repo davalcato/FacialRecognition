@@ -126,6 +126,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         context?.setLineWidth(3.0)
         image.draw(in: CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height))
         
+        context?.translateBy(x: 0, y: image.size.height)
+        context?.scaleBy(x: 1.0, y: -1.0)
+        
+        
+        
     }
     
 }
