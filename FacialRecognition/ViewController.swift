@@ -119,7 +119,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func showLandMarks(_ face:VNFaceObservation) {
-        
+        let image = imageView.image!
+        UIGraphicsBeginImageContextWithOptions(image.size, true, 0)
         
     }
     
