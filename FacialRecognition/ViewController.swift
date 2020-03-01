@@ -150,8 +150,32 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func drawLandmark(landmark:VNFaceLandmarkRegion2D?, context: CGContext?, rect: CGRect, closePath:Bool = false) {
+        if let l = landmark {
+            for i in 0..<l.pointCount {
+                let p = l.normalizedPoints[i]
+                let startX = rect.origin.x
+                let startY = rect.origin.y
+                let relativeX = CGFloat(p.x) * rect.size.width
+                let relativeY = CGFloat(p.y) * rect.size.height
+                let adjustedPoint = CGPoint(x: startX + relativeX, y: startY + relativeY)
+                
+                if i == 0 {
+                    context?.move(to: adjustedPoint)
+                    
+                }
+                else {
+                    context?.addLine(to: adjustedPoint)
+                    
+                    
+                }
+            }
+        }
         
-        
+        if closePath {
+            context?.closePath()
+            return
+        }
+        context?.drawPath(using: .stroke)
         
     }
     
