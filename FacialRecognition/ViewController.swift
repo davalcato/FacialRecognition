@@ -129,6 +129,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         context?.translateBy(x: 0, y: image.size.height)
         context?.scaleBy(x: 1.0, y: -1.0)
         
+        let faceX = face.boundingBox.origin.x * image.size.width
+        let faceY = face.boundingBox.origin.y * image.size.height
+        let faceWidth = face.boundingBox.size.width * image.size.width
+        let faceHeight = face.boundingBox.size.height * image.size.height
+        
+        let faceRect = CGRect(x: faceX, y: faceY, width: faceWidth, height: faceHeight)
+        
+        context?.addRect(faceRect)
+        context?.drawPath(using: .stroke)
         
         
     }
