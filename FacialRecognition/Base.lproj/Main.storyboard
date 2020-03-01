@@ -15,39 +15,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dhx-dr-FzQ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dhx-dr-FzQ">
                                 <rect key="frame" x="20" y="44" width="374" height="703"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXr-Qd-mxa">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXr-Qd-mxa">
                                 <rect key="frame" x="17" y="832" width="85" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="cB4-NE-6CD"/>
+                                    <constraint firstAttribute="width" constant="85" id="hoS-Mh-nn1"/>
+                                </constraints>
                                 <state key="normal" title="Pick a photo"/>
                                 <connections>
                                     <action selector="selectPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lHQ-AJ-Uye"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFr-rC-5oX">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFr-rC-5oX">
                                 <rect key="frame" x="146" y="755" width="123" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Find Faces Button"/>
                                 <connections>
                                     <action selector="findFaces:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TXJ-jZ-aB5"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="imT-8j-2y9" userLabel="fade view">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="imT-8j-2y9" userLabel="fade view">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="747"/>
                                 <subviews>
-                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Tm1-Zl-bCm">
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Tm1-Zl-bCm">
                                         <rect key="frame" x="189" y="430" width="37" height="37"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.84738869859999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Tm1-Zl-bCm" secondAttribute="bottom" constant="280" id="qec-mC-Bab"/>
+                                    <constraint firstItem="Tm1-Zl-bCm" firstAttribute="centerX" secondItem="imT-8j-2y9" secondAttribute="centerX" id="rgb-Vp-SRx"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="SXr-Qd-mxa" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="0ba-hW-Frz"/>
+                            <constraint firstItem="oFr-rC-5oX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="146" id="2zW-SK-0sb"/>
+                            <constraint firstItem="imT-8j-2y9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-44" id="7ey-aX-J4J"/>
+                            <constraint firstItem="Dhx-dr-FzQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9RH-YP-vmq"/>
+                            <constraint firstItem="imT-8j-2y9" firstAttribute="centerX" secondItem="Dhx-dr-FzQ" secondAttribute="centerX" id="Lte-jU-7Ud"/>
+                            <constraint firstItem="imT-8j-2y9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XUr-08-Sjn"/>
+                            <constraint firstItem="imT-8j-2y9" firstAttribute="bottom" secondItem="Dhx-dr-FzQ" secondAttribute="bottom" id="Y7h-ko-ONY"/>
+                            <constraint firstItem="SXr-Qd-mxa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="17" id="de0-Ec-cja"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="oFr-rC-5oX" secondAttribute="bottom" constant="77" id="gSm-VX-HvE"/>
+                            <constraint firstItem="Dhx-dr-FzQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="rkr-lV-iOv"/>
+                            <constraint firstItem="Dhx-dr-FzQ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="uJt-2u-o5y"/>
+                            <constraint firstItem="Dhx-dr-FzQ" firstAttribute="centerX" secondItem="oFr-rC-5oX" secondAttribute="centerX" id="v1l-8i-ixr"/>
+                            <constraint firstItem="oFr-rC-5oX" firstAttribute="top" secondItem="Dhx-dr-FzQ" secondAttribute="bottom" constant="8" id="yX1-VI-rnb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
