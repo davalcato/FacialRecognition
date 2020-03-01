@@ -139,6 +139,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         context?.addRect(faceRect)
         context?.drawPath(using: .stroke)
         
+        let finalImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        imageView.image = finalImage
         
     }
     
