@@ -139,9 +139,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         context?.addRect(faceRect)
         context?.drawPath(using: .stroke)
         
+        context?.setStrokeColor(UIColor.green.cgColor)
+        
+        drawLandmark(landmark: face.landmarks?.faceContour, context: context, rect: faceRect)
+        
         let finalImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         imageView.image = finalImage
+        
+    }
+    
+    func drawLandmark(landmark:VNFaceLandmarkRegion2D?, context: CGContext?, rect: CGRect, closePath:Bool = false) {
+        
+        
         
     }
     
